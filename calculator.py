@@ -1,0 +1,130 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# CALCULATOR"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from tkinter import*\n",
+    "expression=\"\"\n",
+    "def press(num):\n",
+    "    global expression\n",
+    "    expression=expression+str(num)    \n",
+    "    equation.set(expression)\n",
+    "def equalpress():\n",
+    "    try:\n",
+    "        global expression\n",
+    "        total=str(eval(expression))\n",
+    "        equation.set(total)\n",
+    "        expression=\"\"\n",
+    "    except:\n",
+    "        equation.set(\"!!ERROR!!\")\n",
+    "        expression=\"\"\n",
+    "def clear(): \n",
+    "    global expression \n",
+    "    expression = \"\" \n",
+    "    equation.set(\"\") \n",
+    "if __name__ == \"__main__\": \n",
+    "    gui=Tk()\n",
+    "    gui.geometry(\"265x125\")\n",
+    "    window = Tk(className='Calculator')\n",
+    "    gui.configure(background=\"black\")\n",
+    "    equation = StringVar() \n",
+    "    expression_field = Entry(gui, textvariable=equation) \n",
+    "    expression_field.grid(columnspan=4, ipadx=70) \n",
+    "    equation.set('')\n",
+    "    b1 = Button(gui, text=' 1 ', fg='black', bg='blue', command=lambda: press(1), height=1,width=7)\n",
+    "    b1.grid(row=2, column=0) \n",
+    "  \n",
+    "    b2 = Button(gui, text=' 2 ', fg='black', bg='red', command=lambda: press(2),  height=1,width=7)\n",
+    "    b2.grid(row=2, column=1) \n",
+    "  \n",
+    "    b3 = Button(gui, text=' 3 ', fg='black', bg='blue', command=lambda: press(3), height=1,width=7)\n",
+    "    b3.grid(row=2, column=2) \n",
+    "  \n",
+    "    b4 = Button(gui, text=' 4 ', fg='black', bg='red', command=lambda: press(4), height=1,width=7)\n",
+    "    b4.grid(row=3, column=0) \n",
+    "  \n",
+    "    b5 = Button(gui, text=' 5 ', fg='black', bg='blue', command=lambda: press(5), height=1,width=7)\n",
+    "    b5.grid(row=3, column=1) \n",
+    "  \n",
+    "    b6 = Button(gui, text=' 6 ', fg='black', bg='red', command=lambda: press(6),  height=1,width=7)\n",
+    "    b6.grid(row=3, column=2) \n",
+    "  \n",
+    "    b7 = Button(gui, text=' 7 ', fg='black', bg='blue', command=lambda: press(7), height=1,width=7)\n",
+    "    b7.grid(row=4, column=0) \n",
+    "  \n",
+    "    b8 = Button(gui, text=' 8 ', fg='black', bg='red', command=lambda: press(8), height=1,width=7)\n",
+    "    b8.grid(row=4, column=1) \n",
+    "  \n",
+    "    b9 = Button(gui, text=' 9 ', fg='black', bg='blue', command=lambda: press(9), height=1,width=7)\n",
+    "    b9.grid(row=4, column=2) \n",
+    "  \n",
+    "    b0 = Button(gui, text=' 0 ', fg='black', bg='red', command=lambda: press(0),  height=1,width=7)\n",
+    "    b0.grid(row=5, column=0) \n",
+    "  \n",
+    "    plus= Button(gui, text=' + ', fg='black', bg='red', command=lambda: press(\"+\"),  height=1,width=7)\n",
+    "    plus.grid(row=2, column=3) \n",
+    "  \n",
+    "    minus = Button(gui, text=' - ', fg='black', bg='blue', command=lambda: press(\"-\"),  height=1,width=7)\n",
+    "    minus.grid(row=3, column=3) \n",
+    "  \n",
+    "    multiply = Button(gui, text=' * ', fg='black', bg='red', command=lambda: press(\"*\"),  height=1,width=7)\n",
+    "    multiply.grid(row=4, column=3) \n",
+    "  \n",
+    "    divide = Button(gui, text=' / ', fg='black',bg='blue', command=lambda: press(\"/\"),  height=1,width=7)\n",
+    "    divide.grid(row=5, column=3) \n",
+    "  \n",
+    "    equal = Button(gui, text=' = ', fg='black',bg='red', command=lambda:equalpress(), height=1,width=7)\n",
+    "    equal.grid(row=5, column=2) \n",
+    "  \n",
+    "    clear = Button(gui, text='Clear', fg='black', bg='blue',command=clear, height=1,width=7)\n",
+    "    clear.grid(row=5, column='1') \n",
+    "    gui.mainloop()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
